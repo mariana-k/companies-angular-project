@@ -1,0 +1,274 @@
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Filters area */
+
+#logo {
+  margin: 0 20px 35px;
+  text-align: center;
+}
+
+.site-sidenav {
+  background: #1a2733;
+  padding: 20px 0;
+}
+
+.clear-filter {
+  margin: 15px 0 20px 0;
+  padding: 0 5px;
+  display: block;
+  min-width: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #3f5f7a;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 60px;
+  height: auto;
+  font-weight: 700;
+  margin: 0 0 15px 20px;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-field {
+  font-family: 'Montserrat', sans-serif;
+  height: 42px;
+  background: url("../assets/img/icons.png") no-repeat 12px -27px #3f5f7a;
+  border: none;
+  padding: 0 0 0 40px;
+  color: #f1f1f1;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.filters-block {
+  padding: 20px;
+}
+
+.filters-block ul {
+  padding: 0;
+}
+
+.filters-block ul li {
+  line-height: 50px;
+}
+
+.filters-block h4 {
+  color: #f1f1f1;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.filters-block label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+  position: relative;
+  padding: 0 0 0 10px;
+  z-index: -1;
+}
+
+.filter-checkbox:focus {
+  outline: none;
+}
+
+.filter-checkbox:before {
+  content: " ";
+  width: 35px;
+  height: 35px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -18px;
+}
+
+.filter-checkbox:checked:before {
+    border-color: #3f5f7a;  
+}
+
+.filter-checkbox:after {
+    content: " ";
+    width: 10px;
+    height: 22px; 
+    background: #1a2733;
+    position: absolute;
+    left: 25px;
+    top: -11px;
+}
+
+.filter-checkbox:checked + label {
+  color: #3f5f7a;
+}
+
+.toggle-sidenav {
+  width: 45px;
+  height: 45px;
+  min-width: 0;
+  background: url("../assets/img/icons.png") no-repeat 14px 12px #151f29;
+  float: right;
+}
+
+/* Primary content area */
+
+md-list .md-button {
+  text-align: left;
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+
+#content  {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+#content md-icon.logo {
+  margin-top: 10px;
+}
+
+md-button.menuBtn > md-icon {
+  fill:white;
+  width:24px;
+  height:24px;
+}
+
+.main-contnet md-toolbar {
+  background: #10181f; 
+}
+
+.main-contnet md-toolbar h4 {
+  margin: 22px 0;
+}
+
+.companies-list-section {
+  background: #151f29;
+  border-left: 1px solid #1a2835;
+  border-right: 1px solid #1a2835;
+}
+
+.companies-list-section md-list {
+  padding: 0;
+}
+
+.companies-list-section md-list md-list-item button.md-button:not([disabled]):hover {
+  background-color: #111b24;
+}
+
+.companies-list-section md-list .md-button {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #1a2835;
+  color: #ffffff;
+}
+
+.companies-list-section md-list .md-button.selected {
+  color: #ffffff;
+  background-color: #10181f;
+}
+
+.companies-list-section h5 {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.company-item span {
+  text-transform: none;
+}
+
+.add-company-form label {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #3f5f7a;
+  font-size: 10px;
+  display: block;
+  padding: 10px 0 7px 15px;
+}
+
+.add-company-form input {
+  font-family: 'Montserrat', sans-serif;
+  height: 42px;
+  background: #3f5f7a;
+  border: none;
+  padding: 0 0 0 15px;
+  color: #f1f1f1;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.companies-list-section md-list .add-company-button {
+  padding: 10px 20px;
+  background: #ffffff;
+  text-transform: uppercase;
+  color: #10181f;
+  font-size: 12px;
+  width: auto;
+  text-align: center;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 15px auto;
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.company-details-section {
+  background: #10181f;
+}
+
+.company-details-section h6 {
+  color: #37536b;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin: 0;
+}
+
+.company-details-section h2 {
+  color: white;
+}
+
+.company-details-section p {
+  color: white;
+  padding: 5px 0 20px;
+  margin: 0;
+}
+

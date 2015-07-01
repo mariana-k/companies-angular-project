@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Appversaries</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <body ng-app="companiesApp" layout="row" ng-controller="CompaniesController as cl">
+  <md-sidenav layout="column" class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+    <a id="logo" href="index.html">
+      <img src="assets/img/logo.png" alt="Appversaries Logo" />
+    </a>
+    <div class="action-buttons" layout="row">
+      <div flex layout="column">
+        <md-button class="clear-filter" ng-click="search=[];">Clear</md-button>
+      </div>
+      <div flex="20" layout="column">
+        <md-button class="toggle-sidenav" hide-gt-sm ng-click="cl.toggleList()">&nbsp;</md-button>
+      </div>
+    </div>
+    <input class="search-field" type="text" data-ng-model="search.text" placeholder="Search"/>
+    <md-list class="filters-block">
+      <h4>Filter by focus</h4>
+      <ul>
+        <li>
+          <input id="checkbox-testing" class="filter-checkbox" type="checkbox" data-ng-model='search.type1' data-ng-true-value="'Remote Testing'" data-ng-false-value='' /><label for="checkbox-testing">Remote Testing</label>
+        </li>
+        <li>
+          <input id="checkbox-tools" class="filter-checkbox" type="checkbox" data-ng-model='search.type2' data-ng-true-value="'Tools'" data-ng-false-value='' /><label for="checkbox-tools">Tools</label>
+        </li>
+      </ul>
+    </md-list>
+  </md-sidenav>
+
+  <md-content flex layout="column" tabIndex="-1" role="main" class="main-contnet md-whiteframe-z2">
+    <md-toolbar layout="row" hide-gt-sm class="md-whiteframe-z1">
+      <md-button class="menu" hide-gt-sm ng-click="cl.toggleList()" aria-label="Show Companies Filters">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h4>Filters</h4>
+    </md-toolbar>
+    <md-content flex layout="row" layout-sm="column" layout-md="column">
+      <md-content class="companies-list-section" flex layout-lg="column">
+          <md-list>
+            <md-list-item class="company-item" ng-repeat="it in cl.companies | filter:search.type1 | filter:search.type2 | filter:search.text">
+                <md-button ng-click="cl.selectCompany(it)" ng-class="{'selected' : it === cl.selected }">
+                  <md-icon md-svg-icon="{{it.logo}}" class="logo"></md-icon>
+                  {{it.name}}
+                </md-button>
+            </md-list-item>
+            <h5>Add New Company</h5>
+            <form novalidate class="add-company-form" ng-submit="cl.addCompany()" ng-model="cp">
+              </ul>
+              <label for="companyname">Company Name</label>
+              <input id="companyname" type="text" ng-model="cl.companyname" placeholder="Name" />
+              <label for="companyservice">Company Service</label>
+              <input id="companyservice" type="text" ng-model="cl.companyservice" placeholder="Services" />
+              <div class="form-footer">
+                <md-button class="add-company-button">Add Company</md-button>
+              </div>
+            </form>
+          </md-list>
+      </md-content>
+      <md-content class="company-details-section" flex layout-lg="column" id="content">
+        <md-icon md-svg-icon="{{cl.selected.logo}}" class="logo"></md-icon>
+        <h2>{{cl.selected.name}}</h2>
+        <h6>Desctiption</h6>
+        <p>{{cl.selected.content}}</p>
+        <h6>Services</h6>
+        <p>{{cl.selected.services}}</p>
+      </md-content>
+    </md-content>
+  </md-content>
+
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+  <script src="./src/companies/Companies.js"></script>
+  <script src="./src/companies/CompaniesController.js"></script>
+
+  <script type="text/javascript">
+    angular
+      .module('companiesApp', ['ngMaterial', 'companies'])
+          .config(function($mdIconProvider){
+            $mdIconProvider
+              .defaultIconSet("./assets/svg/logos.svg", 128)
+                .icon("menu", "./assets/svg/menu.svg", 24);
+    });
+  </script>
+
+  </body>
+</html>

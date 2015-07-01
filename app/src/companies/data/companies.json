@@ -1,0 +1,18 @@
+[{
+  "name": "Google Company",
+  "logo": "svg-1",
+  "services": "Remote Testing",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lacinia erat in placerat. Sed aliquam, lorem eu fringilla tristique, enim neque iaculis augue."
+},
+{
+  "name": "Microsoft Company",
+  "logo": "svg-2",
+  "services": "Tools",
+  "content": "Fusce tempus purus quis consequat sagittis. Nullam eu odio eu elit porta fringilla. Curabitur iaculis leo quis nulla bibendum hendrerit. Fusce nec consectetur purus."
+},
+{
+  "name": "Apple Company",
+  "logo": "svg-3",
+  "services": "Remote Testing",
+  "content": "Vestibulum luctus non purus eget aliquet. Vivamus at quam auctor, viverra orci eget, vulputate libero. Phasellus vulputate, nisl at congue pellentesque, urna neque ornare nunc, nec vulputate lectus lectus nec nibh."
+}]
