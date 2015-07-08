@@ -1,0 +1,10 @@
+
+
+1. beautiful, fine tuned design in HTML and CSS 
+
+2. thoughtful, well executed responsive design with media queries. think it through, what will the site look like on a tablet? what will the navigation/filters look like on a phone? where will they be located? 
+3. Javascript (preferably using AngularJS) for the basic functionality: searching/filtering for companies, updating the right hand side column when a company is selected. feel free to add additional functionality as you see fit
+
+4. accurate, well formatted, easy to read code
+
+please note: if you want to replace any of the logos with random svg icons, that would be fine too 
